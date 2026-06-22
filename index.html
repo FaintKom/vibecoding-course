@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Вайб-кодинг для продактов · 2 недели до своего ИИ-инструмента</title>
+<meta name="description" content="2-недельный курс вайб-кодинга для продактов. Собери свой ИИ-хаб обратной связи с нуля — живые эфиры, реальный проект, готовый инструмент на выходе.">
+<style>
+  :root{
+    --bg:#0b0c10; --bg2:#13151c; --card:#171a23; --line:#262a36;
+    --tx:#e8eaf0; --mut:#9aa0b0; --acc:#7c5cff; --acc2:#22d3ee; --ok:#34d399;
+    --grad:linear-gradient(120deg,#7c5cff,#22d3ee);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Inter,Arial,sans-serif;background:var(--bg);color:var(--tx);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+  .sec{padding:90px 0}
+  .eyebrow{color:var(--acc2);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:13px}
+  h1,h2,h3{line-height:1.15;font-weight:800;letter-spacing:-.02em}
+  h2{font-size:clamp(28px,4vw,42px);margin:14px 0 18px}
+  .lead{color:var(--mut);font-size:18px;max-width:680px}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;background:rgba(11,12,16,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .logo{font-weight:800;font-size:18px}
+  .logo b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .nav-links{display:flex;gap:26px;font-size:14px;color:var(--mut)}
+  .nav-links a:hover{color:var(--tx)}
+  .btn{display:inline-block;background:var(--grad);color:#0b0c10;font-weight:700;padding:12px 22px;border-radius:12px;transition:transform .15s,box-shadow .15s;font-size:15px}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(124,92,255,.35)}
+  .btn.sm{padding:9px 18px;font-size:14px}
+  @media(max-width:760px){.nav-links{display:none}}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;padding:120px 0 90px;text-align:center}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 50% -10%,rgba(124,92,255,.25),transparent 70%);pointer-events:none}
+  .hero h1{font-size:clamp(34px,6vw,62px);max-width:900px;margin:18px auto}
+  .hero h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .lead{margin:0 auto 30px}
+  .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+  .ghost{border:1px solid var(--line);padding:12px 22px;border-radius:12px;color:var(--tx);font-weight:600;font-size:15px}
+  .ghost:hover{border-color:var(--acc)}
+  .pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:40px}
+  .pill{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;color:var(--mut)}
+  .pill b{color:var(--tx)}
+
+  /* generic cards grid */
+  .grid{display:grid;gap:20px}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:860px){.g3,.g2{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px}
+  .card h3{font-size:19px;margin-bottom:8px}
+  .card p{color:var(--mut);font-size:15px}
+  .ico{width:44px;height:44px;border-radius:12px;background:rgba(124,92,255,.15);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
+
+  .alt{background:var(--bg2)}
+
+  /* pain / before-after */
+  .ba{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
+  @media(max-width:760px){.ba{grid-template-columns:1fr}}
+  .ba .card.bad{border-color:#3a2530}
+  .ba .card.good{border-color:#1f3a33}
+  .ba ul{list-style:none;margin-top:10px}
+  .ba li{padding:7px 0 7px 28px;position:relative;color:var(--mut);font-size:15px}
+  .ba .bad li::before{content:"✕";position:absolute;left:0;color:#f87171;font-weight:700}
+  .ba .good li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:700}
+
+  /* flow */
+  .flow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:26px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-size:14px;font-weight:600}
+  .arr{color:var(--acc2);font-size:18px}
+
+  /* timeline / program */
+  .tl{margin-top:34px;border-left:2px solid var(--line);padding-left:0}
+  .tl-item{position:relative;padding:0 0 14px 30px;margin-bottom:16px}
+  .tl-item::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--grad)}
+  .tl-item .wk{font-size:12px;color:var(--acc2);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+  .tl-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-top:6px}
+  .tl-card h3{font-size:17px;margin-bottom:4px}
+  .tl-card p{color:var(--mut);font-size:14px}
+  .tl-card .out{margin-top:10px;font-size:13px;color:var(--ok)}
+  .tl-card .out b{color:var(--ok)}
+
+  /* give list */
+  .give{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:26px}
+  @media(max-width:760px){.give{grid-template-columns:1fr}}
+  .give div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;font-size:15px;display:flex;gap:12px;align-items:flex-start}
+  .give span{color:var(--ok);font-weight:800;flex:none}
+
+  /* faq */
+  details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:0;margin-bottom:12px;overflow:hidden}
+  summary{padding:18px 22px;cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--acc2);font-size:22px;font-weight:400}
+  details[open] summary::after{content:"–"}
+  details p{padding:0 22px 20px;color:var(--mut);font-size:15px}
+
+  /* cta */
+  .cta{text-align:center;background:var(--bg2);border-top:1px solid var(--line)}
+  .cta h2{max-width:680px;margin:0 auto 16px}
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:14px;text-align:center}
+  .tag{display:inline-block;background:rgba(34,211,238,.12);color:var(--acc2);border-radius:8px;padding:4px 10px;font-size:13px;font-weight:600;margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">vibe<b>·код</b></div>
+    <div class="nav-links">
+      <a href="#project">Проект</a>
+      <a href="#format">Формат</a>
+      <a href="#program">Программа</a>
+      <a href="#give">Что получишь</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="#cta" class="btn sm">Оставить заявку</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Курс для продактов · 2 недели</div>
+    <h1>Собери свой <span class="g">ИИ-инструмент</span> за 2 недели — без навыков разработки</h1>
+    <p class="lead">Вайб-кодинг на живых эфирах. На выходе — задеплоенный ИИ-хаб обратной связи, который ты приносишь на работу в понедельник.</p>
+    <div class="hero-cta">
+      <a href="#cta" class="btn">Хочу на курс</a>
+      <a href="#program" class="ghost">Смотреть программу</a>
+    </div>
+    <div class="pills">
+      <div class="pill">⏱ <b>2 недели</b></div>
+      <div class="pill">🎥 <b>Живые эфиры</b> + записи</div>
+      <div class="pill">🤖 Cursor + Claude Code</div>
+      <div class="pill">🚀 Реальный проект на выходе</div>
+      <div class="pill">👥 Для <b>не-разработчиков</b></div>
+    </div>
+  </div>
+</header>
+
+<!-- PAIN -->
+<section class="sec" id="pain">
+  <div class="wrap">
+    <div class="eyebrow">Зачем это продакту</div>
+    <h2>Обратная связь валится отовсюду. Что чинить первым?</h2>
+    <p class="lead">Отзывы в сторах, тикеты поддержки, опросы, чаты, соцсети — сотни сообщений. Разобрать вручную нереально.</p>
+    <div class="ba">
+      <div class="card bad">
+        <h3>Как сейчас</h3>
+        <ul>
+          <li>Читаешь отзывы по одному</li>
+          <li>Копируешь в Excel, группируешь на глаз</li>
+          <li>Субъективно, долго, не масштабируется</li>
+          <li>500 отзывов — никто не разберёт</li>
+        </ul>
+      </div>
+      <div class="card good">
+        <h3>С твоим хабом</h3>
+        <ul>
+          <li>Грузишь все отзывы в одно место</li>
+          <li>ИИ сам раскладывает по темам и болям</li>
+          <li>Дашборд: что болит чаще, что критично</li>
+          <li>«40% боли — баг оплаты. Чиним первым»</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT -->
+<section class="sec alt" id="project">
+  <div class="wrap">
+    <div class="eyebrow">Сквозной проект</div>
+    <h2>ИИ-хаб обратной связи</h2>
+    <p class="lead">Не учебный сайт-пустышка, а инструмент, который реально решает рабочую задачу продакта. ИИ-кластеризация — ядро продукта, а не довесок.</p>
+    <div class="flow">
+      <div class="step">📥 Загрузка отзывов</div><span class="arr">→</span>
+      <div class="step">🗄 Хранение (Supabase)</div><span class="arr">→</span>
+      <div class="step">🤖 ИИ-кластеризация</div><span class="arr">→</span>
+      <div class="step">📊 Дашборд приоритетов</div><span class="arr">→</span>
+      <div class="step">🚀 Деплой</div>
+    </div>
+    <div class="grid g3" style="margin-top:34px">
+      <div class="card"><div class="ico">🧩</div><h3>Полный стек на одном проекте</h3><p>Интерфейс, база данных, ИИ-фича, дашборд и деплой — всё, что должен освоить вайб-кодер.</p></div>
+      <div class="card"><div class="ico">💼</div><h3>Польза на работе сразу</h3><p>Грузишь реальные отзывы своего продукта и в понедельник несёшь начальнику готовую картину.</p></div>
+      <div class="card"><div class="ico">🔁</div><h3>Переносимый шаблон</h3><p>Тот же подход переносится на любой свой проект — научился один раз, применяешь везде.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMAT -->
+<section class="sec" id="format">
+  <div class="wrap">
+    <div class="eyebrow">Формат</div>
+    <h2>Занятие = работающий артефакт</h2>
+    <p class="lead">Никакой воды. Каждый эфир заканчивается готовой частью твоего приложения.</p>
+    <div class="grid g3" style="margin-top:30px">
+      <div class="card"><div class="ico">🎬</div><h3>Лайвкодинг в кадре</h3><p>Эксперт пишет проект вживую, ты повторяешь и задаёшь вопросы по ходу.</p></div>
+      <div class="card"><div class="ico">💬</div><h3>Динамичный чат + разбор кода</h3><p>Застрял — подскажут. Технарь на страховке комментирует архитектуру.</p></div>
+      <div class="card"><div class="ico">📼</div><h3>Записи остаются</h3><p>Пропустил эфир или выпал из ритма — догоняешь по записям.</p></div>
+      <div class="card"><div class="ico">🧑‍🤝‍🧑</div><h3>Живая команда</h3><p>Не обезличенная запись с маркетплейса, а реальные люди на связи.</p></div>
+      <div class="card"><div class="ico">🏁</div><h3>Build-спринт + демо-день</h3><p>Доводишь проект в выходной, показываешь результат, получаешь разбор.</p></div>
+      <div class="card"><div class="ico">🎓</div><h3>Сертификат + портфолио</h3><p>На выходе — рабочий инструмент в портфолио и сертификат.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM -->
+<section class="sec alt" id="program">
+  <div class="wrap">
+    <div class="eyebrow">Программа</div>
+    <h2>Что и когда делаем</h2>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="wk">Занятие 0 · Старт</div>
+        <div class="tl-card">
+          <h3>Формат, инструменты, настройка</h3>
+          <p>Разбираем как устроен курс и что построим. Ставим Cursor + Claude Code, регистрируем аккаунты (Supabase, Lovable, GitHub, Vercel), учимся «разговаривать» с ИИ. Технический порог снят до старта.</p>
+          <div class="out">→ <b>Артефакт:</b> настроенная среда + первый «hello» от ИИ</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="wk">Неделя 1 · От идеи до данных</div>
+        <div class="tl-card">
+          <h3>Занятие 1 — Спека + интерфейс</h3>
+          <p>Проектируем приложение и генерируем UI: экран загрузки отзывов, таблица, фильтры.</p>
+          <div class="out">→ <b>Артефакт:</b> работающий фронт хаба</div>
+        </div>
+        <div class="tl-card" style="margin-top:12px">
+          <h3>Занятие 2 — Данные</h3>
+          <p>Подключаем Supabase, проектируем схему, импортируем отзывы из CSV, сохраняем.</p>
+          <div class="out">→ <b>Артефакт:</b> хаб с загруженными реальными отзывами</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="wk">Неделя 2 · ИИ-ядро и деплой</div>
+        <div class="tl-card">
+          <h3>Занятие 3 — ИИ-кластеризация</h3>
+          <p>ИИ читает отзывы и раскладывает по темам и болям, ставит теги, делает саммари. Собираем дашборд приоритетов.</p>
+          <div class="out">→ <b>Артефакт:</b> отзывы разложены ИИ + дашборд</div>
+        </div>
+        <div class="tl-card" style="margin-top:12px">
+          <h3>Занятие 4 — Деплой</h3>
+          <p>Выкатываем в прод (Vercel), подключаем домен, проходим чеклист «что чинить».</p>
+          <div class="out">→ <b>Артефакт:</b> публичная ссылка на свой инструмент</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="wk">Финал</div>
+        <div class="tl-card">
+          <h3>Build-спринт + демо-день</h3>
+          <p>Доводишь проект на своих данных, эксперт и технарь комментируют вживую. Показываешь результат группе.</p>
+          <div class="out">→ <b>Артефакт:</b> задеплоенный хаб + портфолио + сертификат</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GIVE -->
+<section class="sec" id="give">
+  <div class="wrap">
+    <div class="eyebrow">Что получишь</div>
+    <h2>На выходе — не знания «в стол», а результат</h2>
+    <div class="give">
+      <div><span>✓</span> Задеплоенный ИИ-хаб обратной связи на своих данных</div>
+      <div><span>✓</span> Навык собирать приложения вайб-кодом с нуля</div>
+      <div><span>✓</span> Публичная ссылка на проект для портфолио</div>
+      <div><span>✓</span> Записи всех эфиров с бессрочным доступом</div>
+      <div><span>✓</span> Разбор кода и обратная связь от практиков</div>
+      <div><span>✓</span> Сертификат о прохождении</div>
+      <div><span>✓</span> Сообщество и живой контакт с командой</div>
+      <div><span>✓</span> Понимание, как такие инструменты делаются за вечер</div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFF -->
+<section class="sec alt" id="diff">
+  <div class="wrap">
+    <div class="eyebrow">Чем отличаемся</div>
+    <h2>Почему мы, а не дешёвая запись с маркетплейса</h2>
+    <div class="grid g2" style="margin-top:26px">
+      <div class="card"><div class="ico">🎯</div><h3>Реально полезный проект</h3><p>У большинства курсов — учебный сайт или бот. У нас — инструмент, который продакт применяет на работе.</p></div>
+      <div class="card"><div class="ico">📡</div><h3>Живые эфиры, не запись</h3><p>Самое ценное в дорогих западных когортах — живое обучение и фидбэк. У нас это есть, без их ценника.</p></div>
+      <div class="card"><div class="ico">⚡</div><h3>Вайб-кодинг «плюс»</h3><p>Не просто «накликал». Понимаешь архитектуру — технарь объясняет, что под капотом.</p></div>
+      <div class="card"><div class="ico">🕑</div><h3>2 недели, а не 2 месяца</h3><p>Короткий формат с быстрым результатом. Влезает в жизнь занятого человека.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="eyebrow">FAQ</div>
+    <h2>Частые вопросы</h2>
+    <div style="margin-top:26px">
+      <details open><summary>Нужно ли уметь программировать?</summary><p>Нет. Курс для продактов и «около-айтишников». Код пишет ИИ, ты ставишь задачу и собираешь результат. Технический порог снимаем на занятии 0.</p></details>
+      <details><summary>А если я отстану или пропущу эфир?</summary><p>Все эфиры в записи, доступ остаётся. В чате подскажут, технарь добивает застрявших. Занятие = артефакт, так что всегда понятно, где ты.</p></details>
+      <details><summary>Что если у меня нет данных с отзывами?</summary><p>Дадим готовый датасет-пример. Но лучше принести реальные отзывы своего продукта — тогда инструмент сразу полезен на работе.</p></details>
+      <details><summary>Какие инструменты используем?</summary><p>Cursor + Claude Code как основа, Supabase для данных, Lovable для интерфейса, Vercel для деплоя. Всё ставим и настраиваем на занятии 0.</p></details>
+      <details><summary>Что в итоге у меня будет?</summary><p>Задеплоенный ИИ-хаб обратной связи с публичной ссылкой, навык вайб-кодинга, проект в портфолио и сертификат.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec cta" id="cta">
+  <div class="wrap">
+    <div class="tag">Старт ближайшего потока</div>
+    <h2>Собери свой ИИ-инструмент за 2 недели</h2>
+    <p class="lead" style="margin:0 auto 26px">Оставь заявку — расскажем детали, ответим на вопросы и забронируем место в потоке.</p>
+    <a href="#" class="btn" onclick="alert('Сюда подключается форма заявки / ссылка на оплату');return false;">Оставить заявку</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© Академия · Курс по вайб-кодингу для продактов · Собери свой ИИ-инструмент за 2 недели</div>
+</footer>
+
+</body>
+</html>
