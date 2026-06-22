@@ -66,6 +66,7 @@ h2{font-size:40px;font-weight:800;letter-spacing:-1px;margin:14px 0 0}
       <a href="#value" class="navlink">Ценность</a>
       <a href="#project" class="navlink">Проект</a>
       <a href="#program" class="navlink">Программа</a>
+      <a href="#schedule" class="navlink">Расписание</a>
       <a href="#journey" class="navlink">Путь студента</a>
       <a href="#market" class="navlink">Рынок</a>
     </nav>
@@ -295,6 +296,47 @@ h2{font-size:40px;font-weight:800;letter-spacing:-1px;margin:14px 0 0}
 .pwork{font-size:14.5px;color:var(--ink-500);line-height:1.5}
 .part{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:700;color:var(--blue-800)}
 .pdot{width:8px;height:8px;border-radius:999px;background:var(--blue-500);flex:none}
+</style>
+
+<!-- SCHEDULE -->
+<section id="schedule" style="background:var(--paper-2);border-top:1px solid var(--ink-100);border-bottom:1px solid var(--ink-100)">
+  <div class="wrap" style="padding:90px 40px">
+    <div class="eyebrow">Расписание · по дням</div>
+    <h2>Что происходит каждый <em class="mark">день</em></h2>
+    <p class="lead">Ритм: два воркшопа в неделю плюс воркшоп 0 на старте и демо-день в конце. У каждого дня одна цель и понятный результат. Дни недели и время — ориентир, подстроим под поток.</p>
+
+    <div class="wkh" style="margin-top:36px">Пре-ворк · до старта</div>
+    <div class="day gcol"><div class="dmeta"><span class="dtag lesson">async</span><span class="dlabel">За 2–3 дня</span></div><div><div class="dtitle">Настройка</div><div class="dgoal">Цель: настроить среду (Cursor, Claude через ProxyAPI, аккаунты) и снять технический порог до старта.</div></div></div>
+
+    <div class="wkh">Неделя 1 · от идеи до данных</div>
+    <div class="day gcol"><div class="dmeta"><span class="dtag live">live</span><span class="dlabel">День 1 · Пн</span></div><div><div class="dtitle">Воркшоп 0 — старт</div><div class="dgoal">Цель: понять формат курса, сделать первый запуск ИИ и собрать источники своих отзывов для проекта.</div></div></div>
+    <div class="day gcol"><div class="dmeta"><span class="dtag lesson">урок</span><span class="dlabel">День 2 · Вт</span></div><div><div class="dtitle">Модуль 1 — интерфейс</div><div class="dgoal">Цель: научиться ставить задачу ИИ и собрать интерфейс хаба — экран загрузки и ленту отзывов.</div></div></div>
+    <div class="day gcol"><div class="dmeta"><span class="dtag live">live</span><span class="dlabel">День 3 · Ср</span></div><div><div class="dtitle">Воркшоп 1 — интерфейс</div><div class="dgoal">Цель: собрать рабочий интерфейс вживую и разобрать приёмы постановки задачи ИИ.</div></div></div>
+    <div class="day gcol"><div class="dmeta"><span class="dtag lesson">урок</span><span class="dlabel">День 4 · Чт</span></div><div><div class="dtitle">Модуль 2 — данные</div><div class="dgoal">Цель: разобраться с базой данных и загрузить в неё свои реальные отзывы из CSV.</div></div></div>
+    <div class="day gcol"><div class="dmeta"><span class="dtag live">live</span><span class="dlabel">День 5 · Пт</span></div><div><div class="dtitle">Воркшоп 2 — данные</div><div class="dgoal">Цель: связать интерфейс с базой и починить типовые ошибки, чтобы хаб показывал реальные отзывы.</div></div></div>
+    <div class="day gcol"><div class="dmeta"><span class="dtag self">сам</span><span class="dlabel">Выходные</span></div><div><div class="dtitle">Догоняем</div><div class="dgoal">Цель: довести неделю 1, чтобы к неделе 2 у всех был хаб с данными. Нет своих отзывов — берём готовый датасет.</div></div></div>
+
+    <div class="wkh">Неделя 2 · ИИ-ядро и деплой</div>
+    <div class="day gcol"><div class="dmeta"><span class="dtag lesson">урок</span><span class="dlabel">День 8 · Пн</span></div><div><div class="dtitle">Модуль 3 — ИИ-ядро</div><div class="dgoal">Цель: понять, как ИИ раскладывает текст по темам, и разметить свои отзывы по темам и болям.</div></div></div>
+    <div class="day gcol"><div class="dmeta"><span class="dtag live">live</span><span class="dlabel">День 9 · Вт</span></div><div><div class="dtitle">Воркшоп 3 — ИИ-ядро</div><div class="dgoal">Цель: довести кластеризацию под свои данные и собрать дашборд приоритетов.</div></div></div>
+    <div class="day gcol"><div class="dmeta"><span class="dtag lesson">урок</span><span class="dlabel">День 10 · Ср</span></div><div><div class="dtitle">Модуль 4 — деплой и перенос</div><div class="dgoal">Цель: задеплоить хаб и описать, как перенести тот же подход на свою следующую задачу.</div></div></div>
+    <div class="day gcol"><div class="dmeta"><span class="dtag live">live</span><span class="dlabel">День 11 · Чт</span></div><div><div class="dtitle">Воркшоп 4 — деплой</div><div class="dgoal">Цель: выкатить инструмент в прод и пройти чеклист, чтобы получить рабочую публичную ссылку.</div></div></div>
+    <div class="day gcol"><div class="dmeta"><span class="dtag sprint">спринт</span><span class="dlabel">Выходные</span></div><div><div class="dtitle">Build-спринт</div><div class="dgoal">Цель: довести проект до готового состояния на своих данных, с подсказками эксперта и технаря.</div></div></div>
+    <div class="day gcol"><div class="dmeta"><span class="dtag live">live</span><span class="dlabel">День 14</span></div><div><div class="dtitle">Демо-день</div><div class="dgoal">Цель: показать результат, посмотреть проект соседа и получить оценку по рубрикатору.</div></div></div>
+  </div>
+</section>
+<style>
+.wkh{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-700);font-weight:500;margin:30px 0 6px}
+.day{grid-template-columns:160px 1fr;gap:20px;padding:16px 0;border-top:1px solid var(--ink-100);align-items:start}
+.dmeta{display:flex;flex-direction:column;gap:6px}
+.dtag{font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;padding:3px 9px;border-radius:999px;width:fit-content}
+.dtag.live{background:var(--blue-600);color:#fff}
+.dtag.lesson{background:var(--ink-100);color:var(--ink-500)}
+.dtag.self{background:var(--paper);border:1px solid var(--ink-200);color:var(--ink-500)}
+.dtag.sprint{background:var(--amber-100);color:var(--amber-700)}
+.dlabel{font-weight:800;font-size:14px}
+.dtitle{font-weight:800;font-size:15px}
+.dgoal{color:var(--ink-500);font-size:14px;line-height:1.5;margin-top:4px}
 </style>
 
 <!-- JOURNEY -->
